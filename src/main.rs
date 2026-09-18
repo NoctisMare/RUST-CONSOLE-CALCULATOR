@@ -60,6 +60,7 @@ fn main() {
 
     let array_length: usize = array.len();
     println!("{}", array_length);
+    let mut j: i32 = 1;
     for i in (1..array_length).step_by(2) {
         if i + 1 >= array_length {
             break;
@@ -83,8 +84,9 @@ fn main() {
 
         match calculate(result, op, b) {
             Ok(res) => {
-                println!("=[{}]> {} {} {} = {}", i, result, op, b, res);
+                println!("=[{}]> {} {} {} = {}", j, result, op, b, res);
                 result = res;
+                j += 1;
             }
             Err(e) => {
                 eprintln!("[!] ERR: {}", e);
