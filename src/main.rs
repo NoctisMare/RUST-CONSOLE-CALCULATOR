@@ -82,7 +82,7 @@ fn main() {
 
         match calculate(result, op, b) {
             Ok(res) => {
-                println!("=> {} {} {} = {}", result, op, b, res);
+                println!("=[{}]> {} {} {} = {}", i, result, op, b, res);
                 result = res;
             }
             Err(e) => {
