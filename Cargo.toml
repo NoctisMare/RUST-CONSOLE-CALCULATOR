@@ -4,3 +4,11 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+
+[profile.release]
+opt-level = 3           # Maximize runtime speed for math operations
+lto = true              # Link Time Optimization: removes dead code across all crates
+codegen-units = 1       # Single codegen unit for better optimization (slower compile, faster binary)
+strip = "symbols"       # Remove debug symbols to reduce binary size significantly
+panic = "abort"         # Abort on panic instead of unwinding (smaller binary, faster error handling)
+overflow-checks = false # Disable runtime overflow checks (allows integer wrapping, slightly faster)

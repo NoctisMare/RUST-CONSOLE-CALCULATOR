@@ -41,7 +41,7 @@ fn main() {
     let array: Vec<&str> = input.trim().split_whitespace().collect();
     print!("\n");
 
-    if array.len() < 3 || array.len() % 2 == 0 {
+    if array.len() < 3 {
         eprintln!("[!] Invalid expression. Expected format: <f64> <char> <f64> [<char> <f64>...]");
         process::exit(1);
     }
@@ -59,6 +59,7 @@ fn main() {
     };
 
     let array_length: usize = array.len();
+    println!("{}", array_length);
     for i in (1..array_length).step_by(2) {
         if i + 1 >= array_length {
             break;
